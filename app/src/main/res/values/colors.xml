@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#F4F4F4</color>
+    <color name="colorAccent">#F4F4F4</color>
+
+    <color name="auth_button_color">#ff9b00</color>
+    <color name="auth_button_color_pressed">#f9b854</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="dark_blue">#4e92df</color>
+    <color name="hint_color">#6e6e6e</color>
+    <color name="red">#ff0000</color>
+
+</resources>

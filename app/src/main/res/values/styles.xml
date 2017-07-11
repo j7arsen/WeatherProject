@@ -1,0 +1,54 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/hint_color</item>
+        <item name="colorControlActivated">@color/auth_button_color</item>
+        <item name="colorControlHighlight">@color/auth_button_color</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/toolbar_text_size</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Toolbar.Arrow.Style" parent="AppTheme">
+        <item name="colorControlNormal">@color/dark_blue</item>
+        <item name="android:textColorSecondary">@color/dark_blue</item>
+    </style>
+
+    <style name="EdittextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/hint_color</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="ErrorAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">@dimen/error_size</item>
+    </style>
+
+    <style name="TextInputLayoutStyle">
+        <item name="errorTextAppearance">@style/ErrorAppearance</item>
+        <item name="android:textColorHint">@color/hint_color</item>
+    </style>
+
+    <style name="Theme.Dialog" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+</resources>

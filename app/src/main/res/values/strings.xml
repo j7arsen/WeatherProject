@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">WeatherProject</string>
+    <string name="auth.button.name">Авторизация</string>
+    <string name="auth.email.invalid">Неверный email</string>
+    <string name="auth.password.invalid">Неверный пароль</string>
+    <string name="sign.in.email">Электронная почта</string>
+    <string name="sign.in.password">Пароль</string>
+    <string name="sign.in.enter">Войти</string>
+    <string name="sing.in.test">Тестовая функциональность</string>
+
+    <string name="message.error.connect">Нет интернет соединения. Включите интернет и попробуйте снова.</string>
+    <string name="message.error.default">Сервер не доступен. Попробуйте позже.</string>
+    <string name="message.error.socket">Слишком медленный интернет. Попробуйте другой.</string>
+
+</resources>
