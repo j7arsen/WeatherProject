@@ -2,6 +2,7 @@ package com.j7arsen.weatherproject.ui.signin;
 
 import com.j7arsen.weatherproject.base.IMvpView;
 import com.j7arsen.weatherproject.base.IPresenter;
+import com.j7arsen.weatherproject.dataclassess.ValidationErrorType;
 import com.j7arsen.weatherproject.progress.ErrorHandler;
 
 /**
@@ -14,7 +15,7 @@ public interface ISignInContract {
         void startProgressDialog();
         void completeProgressDialog();
         void errorProgressDialog(ErrorHandler errorHandler);
-        void setError(boolean isEmail, boolean isError);
+        void setError(ValidationErrorType validationErrorType, boolean isError);
         void showWeatherData(String weatherData);
     }
 

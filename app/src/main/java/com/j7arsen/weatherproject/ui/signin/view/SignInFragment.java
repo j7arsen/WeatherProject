@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.j7arsen.weatherproject.R;
 import com.j7arsen.weatherproject.base.BaseActivity;
 import com.j7arsen.weatherproject.base.BaseFragment;
+import com.j7arsen.weatherproject.dataclassess.ValidationErrorType;
 import com.j7arsen.weatherproject.progress.ErrorHandler;
 import com.j7arsen.weatherproject.progress.ProgressDialogManager;
 import com.j7arsen.weatherproject.ui.signin.ISignInContract;
@@ -152,30 +153,33 @@ public class SignInFragment extends BaseFragment implements ISignInContract.View
     }
 
     @Override
-    public void setError(boolean isEmail, boolean isError){
-        if(isError){
-            if(isEmail){
-                tilEmail.setError(FieldConverter.getString(R.string.auth_email_invalid));
-            } else{
-                int px = (int) TypedValue.applyDimension(
-                        TypedValue.COMPLEX_UNIT_DIP,
-                        30,
-                        getActivity().getResources().getDisplayMetrics()
-                );
-                RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-                lp.setMargins(0, 0, 0, px);
-                ivIcon.setLayoutParams(lp);
-                tilPassword.setError(FieldConverter.getString(R.string.auth_password_invalid));
-            }
-        } else{
-            if(isEmail) {
-                tilEmail.setErrorEnabled(false);
-            } else {
-                RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-                lp.setMargins(0, 0, 0, 0);
-                ivIcon.setLayoutParams(lp);
-                tilPassword.setErrorEnabled(false);
-            }
+    public void setError(ValidationErrorType validationErrorType, boolean isError){
+        switch (validationErrorType){
+            case EMAIL:
+                if(isError){
+                    tilEmail.setError(FieldConverter.getString(R.string.auth_email_invalid));
+                } else{
+                    tilEmail.setErrorEnabled(false);
+                }
+                break;
+            case PASSWORD:
+                if(isError){
+                    int px = (int) TypedValue.applyDimension(
+                            TypedValue.COMPLEX_UNIT_DIP,
+                            30,
+                            getActivity().getResources().getDisplayMetrics()
+                    );
+                    RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+                    lp.setMargins(0, 0, 0, px);
+                    ivIcon.setLayoutParams(lp);
+                    tilPassword.setError(FieldConverter.getString(R.string.auth_password_invalid));
+                } else{
+                    RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+                    lp.setMargins(0, 0, 0, 0);
+                    ivIcon.setLayoutParams(lp);
+                    tilPassword.setErrorEnabled(false);
+                }
+                break;
         }
     }
 

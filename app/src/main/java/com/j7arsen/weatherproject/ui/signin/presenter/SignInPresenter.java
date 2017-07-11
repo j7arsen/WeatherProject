@@ -5,6 +5,7 @@ import com.j7arsen.weatherproject.api.RequestParams;
 import com.j7arsen.weatherproject.api.response.WeatherResponse;
 import com.j7arsen.weatherproject.app.Constants;
 import com.j7arsen.weatherproject.base.BasePresenter;
+import com.j7arsen.weatherproject.dataclassess.ValidationErrorType;
 import com.j7arsen.weatherproject.dataclassess.WeatherData;
 import com.j7arsen.weatherproject.progress.ErrorHandler;
 import com.j7arsen.weatherproject.ui.signin.ISignInContract;
@@ -86,20 +87,20 @@ public class SignInPresenter extends BasePresenter<ISignInContract.View> impleme
 
     private boolean checkEmail(String email){
         if(ValidFields.isEmailValid(email)){
-            getMvpView().setError(true, false);
+            getMvpView().setError(ValidationErrorType.EMAIL, false);
             return true;
         } else{
-            getMvpView().setError(true, true);
+            getMvpView().setError(ValidationErrorType.EMAIL, true);
             return false;
         }
     }
 
     private boolean checkPassword(String password){
         if(ValidFields.isPasswordValid(password)){
-            getMvpView().setError(false, false);
+            getMvpView().setError(ValidationErrorType.PASSWORD, false);
             return true;
         } else{
-            getMvpView().setError(false, true);
+            getMvpView().setError(ValidationErrorType.PASSWORD, true);
             return false;
         }
     }
